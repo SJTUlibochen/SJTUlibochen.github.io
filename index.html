@@ -147,15 +147,15 @@
 </style>
 <body>
     <header id="header">
-        <h1> jojo </h1>
+        <h1>饼言饼语</h1>
     </header>
     <main id="app">
         <aside>
             <p id="describe">
-                可以在这里简单介绍你自己
+                饼桑的暴论记录器
             </p>
         </aside>
-        <p class="tip">现在总共 b 了 {{count}} 条</p>
+        <p class="tip">饼桑暴论数： {{count}} </p>
         <section class="item" v-for="item in contents" v-cloak>
             <p v-html='item.attributes.content'></p>
             <time v-bind:datetime="item.attributes.time">{{item.attributes.time}}</time>
@@ -208,7 +208,7 @@
     function getData(page = 0) {
         query.descending('createdAt').skip(page * 20).limit(20).find().then(function(results) {
             if (results.length == 0) {
-                alert('之前没 b 过了')
+                alert('阿饼，收手吧')
             } else {
                 let resC = results;
                 reqData = false;
